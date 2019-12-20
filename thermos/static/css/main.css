@@ -60,7 +60,9 @@ textarea {
     margin-left: .5em;
 }
 
-
+.flashes li {
+    padding: .2em .5em;
+}
 
 
 

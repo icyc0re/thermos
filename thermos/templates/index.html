@@ -3,5 +3,19 @@
 {% block title %}Thermos - Welcome{% endblock %}
 
 {% block content %}
-LANDING PAGE
+<article class="flashes">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li class="light-green">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+</article>
+<section>
+    <h3>LANDING PAGE</h3>
+    <article>Lorem ipsum blabla bliblo</article>
+</section>
 {% endblock %}
