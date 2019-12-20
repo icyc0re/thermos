@@ -1,0 +1,6 @@
+# virtual environment
+env
+
+# python temporary and compiled files
+**/__pycache__
+**/*.pyc
