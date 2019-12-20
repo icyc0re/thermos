@@ -16,17 +16,20 @@ def store_bookmark(url):
         'date': datetime.now()
     })
 
+def new_bookmarks(num):
+    return sorted(bookmarks, key=lambda x: x['date'], reverse=True)[:num]
+
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', last_bookmarks=new_bookmarks(5))
 
 @app.route('/add', methods = ['GET', 'POST'])
 def add():
     if request.method == 'POST':
         url = request.form['url']
         store_bookmark(url)
-        flash('Stored bookmark: "{}"'.format(url))
+        flash('Stored bookmark: {}'.format(url))
         return redirect(url_for('index'))
     return render_template('add.html', pagename='add')
 
