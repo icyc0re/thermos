@@ -1,6 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+from datetime import datetime
+
+from logging import DEBUG
 
 app = Flask(__name__)
+app.logger.setLevel(DEBUG)
 
 @app.route('/')
 @app.route('/index')
